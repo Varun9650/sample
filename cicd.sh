@@ -44,8 +44,8 @@ for file in $CHANGED_FILES; do
     fi
 done
 # Rsync changed files to remote server
-#rsync -avz -e ssh "$TEMP_DEPLOY_DIR/" "$REMOTE_USER@$REMOTE_HOST:$DEPLOY_DIR"
-scp -r "$TEMP_DEPLOY_DIR/" "$REMOTE_USER@$REMOTE_HOST:$DEPLOY_DIR"
+rsync -avz -e ssh "$TEMP_DEPLOY_DIR/" "$REMOTE_USER@$REMOTE_HOST:$DEPLOY_DIR"
+#scp -r "$TEMP_DEPLOY_DIR/" "$REMOTE_USER@$REMOTE_HOST:$DEPLOY_DIR"
 
 # Save the new deployed commit hash
 echo "$LATEST_COMMIT" > "$LAST_COMMIT_FILE"
