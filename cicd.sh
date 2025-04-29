@@ -1,7 +1,7 @@
 #!/bin/bash
 # CONFIGURATION
 REPO_URL="https://github.com/Varun9650/sample.git"  # ✅ Your updated GitHub repo
-REPO_DIR="Z:\Work (Y)\RealITSolutions\sample"                     # Local temp directory
+REPO_DIR="/root/sample/sample"                     # Local temp directory
 DEPLOY_DIR="/var/www/html"                    # ✅ Destination on remote server (change if needed)
 REMOTE_USER="root"                                   # ✅ Assuming you use root
 REMOTE_HOST="157.66.191.31"                          # ✅ Your server IP
@@ -44,7 +44,10 @@ for file in $CHANGED_FILES; do
     fi
 done
 # Rsync changed files to remote server
-rsync -avz -e ssh "$TEMP_DEPLOY_DIR/" "$REMOTE_USER@$REMOTE_HOST:$DEPLOY_DIR"
+sshpass -p 'welcome2ris' rsync -avz -e ssh -o StrictHostKeyChecking=no "$TEMP_DEPLOY_DIR/" "$REMOTE_USER@$REMOTE_HOST:$DEPLOY_DIR"
+#sshpass -p 'welcome2ris' ssh -o StrictHostKeyChecking=no root@157.66.191.31
+
+#rsync -avz -e ssh "$TEMP_DEPLOY_DIR/" "$REMOTE_USER@$REMOTE_HOST:$DEPLOY_DIR"
 #scp -r "$TEMP_DEPLOY_DIR/" "$REMOTE_USER@$REMOTE_HOST:$DEPLOY_DIR"
 
 # Save the new deployed commit hash
