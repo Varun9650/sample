@@ -1,3 +1,3 @@
 function greetUser() {
-  alert("bybyehello2me from JavaScript!");
+  alert("bybyehello2me from JavaScript! with Java");
 }
