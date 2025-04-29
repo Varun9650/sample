@@ -2,7 +2,7 @@
 # CONFIGURATION
 REPO_URL="https://github.com/Varun9650/sample.git"  # ✅ Your updated GitHub repo
 REPO_DIR="Z:\Work (Y)\RealITSolutions\sample"                     # Local temp directory
-DEPLOY_DIR="/var/www/html/sample"                    # ✅ Destination on remote server (change if needed)
+DEPLOY_DIR="/var/www/html"                    # ✅ Destination on remote server (change if needed)
 REMOTE_USER="root"                                   # ✅ Assuming you use root
 REMOTE_HOST="157.66.191.31"                          # ✅ Your server IP
 LAST_COMMIT_FILE=".last_deployed_commit"

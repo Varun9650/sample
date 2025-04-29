@@ -1,3 +1,3 @@
 function greetUser() {
-  alert("Bye from JavaScript!");
+  alert("bybye from JavaScript!");
 }
